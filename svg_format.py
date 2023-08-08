@@ -1,5 +1,4 @@
 import numpy as np
-# from numba import njit
 import random
 
 def create_2d_affine_tranformation(a = 0.0, b = 0.0, c = 0.0, d = 0.0, e = 0.0, f = 0.0):
@@ -51,7 +50,7 @@ def draw_barnsley_fern(iter_func, filename = 'py_barnsley_fern.svg'):
         img.write(f'<svg viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">')
         
         point = np.array([0.0, 0.0])
-        for _ in range(500000):
+        for _ in range(50000):
             point = iter_func(point)
             p = translate(point)
             img.write(draw_point(p[0], p[1], '#446F49'))
